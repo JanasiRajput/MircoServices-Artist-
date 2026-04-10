@@ -238,3 +238,27 @@ Binding(COMMAND+SHIFT+T,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-04-09 21:26:12.373
+!MESSAGE [Info]	Angular project loading started
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-04-09 21:26:12.374
+!MESSAGE [Info]	Language Service is not yet enabled for project /Users/janasirajput/eclipse-workspace/FINAL_EXAM-2026/FINAL_GATEWAY_Janasi_Rajput/src/main/webapp/tsconfig.spec.json
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-04-09 21:26:12.374
+!MESSAGE [Info]	Angular project loading finished
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-04-09 21:26:12.374
+!MESSAGE [Info]	Angular project loading started
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-04-09 21:26:12.374
+!MESSAGE [Info]	Language Service is not yet enabled for project /Users/janasirajput/eclipse-workspace/FINAL_EXAM-2026/FINAL_GATEWAY_Janasi_Rajput/src/main/webapp/tsconfig.app.json
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-04-09 21:26:12.374
+!MESSAGE [Info]	Angular project loading finished
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-04-09 21:26:12.374
+!MESSAGE [Info]	Angular project loading started
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-04-09 21:26:12.374
+!MESSAGE [Info]	Angular project loading finished
