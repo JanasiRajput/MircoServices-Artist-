@@ -1,7 +1,7 @@
 # Advanced Microservice Gateway Architecture
 
 Welcome to the full-stack microservice integration project! This repository contains a three-piece Spring Boot microservice architecture (Artist employee management, Poster inventory management, and a Gateway Nexus overlay), alongside a fully integrated Angular 17 interface.
-!(home)[./Home.png]
+![home](./Home.png)
 ## Architecture Highlights
 - **Microservice 1 (Artist)**: Internal service bound to `localhost:8081`. Governs the initial records of Employees to the H2 database.
 - **Microservice 2 (Poster)**: Internal service bound to `localhost:8082`. Governs Item generation directly tying Item availability and Sales logic to the `H2` memory instance.
