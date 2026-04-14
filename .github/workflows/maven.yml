@@ -1,0 +1,74 @@
+name: Java CI with Maven (Microservices + Angular)
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout code
+      - uses: actions/checkout@v4
+
+      # -------------------------
+      # Java 21 Setup
+      # -------------------------
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: "temurin"
+          cache: maven
+
+      # -------------------------
+      # Node.js Setup (Angular)
+      # -------------------------
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: npm
+          cache-dependency-path: FINAL_GATEWAY_Janasi_Rajput/src/main/webapp/package-lock.json
+
+      # -------------------------
+      # Build MICRO1
+      # -------------------------
+      - name: Build and install MICRO1
+        run: |
+          cd FINAL_MICRO1_Janasi_Rajput
+          mvn -B clean install
+
+      # -------------------------
+      # Build MICRO2
+      # -------------------------
+      - name: Build and install MICRO2
+        run: |
+          cd FINAL_MICRO2_Janasi_Rajput
+          mvn -B clean install
+
+      # -------------------------
+      # Build GATEWAY backend
+      # -------------------------
+      - name: Build GATEWAY backend
+        run: |
+          cd FINAL_GATEWAY_Janasi_Rajput
+          mvn -B clean package
+
+      # -------------------------
+      # Build Angular Frontend
+      # -------------------------
+      - name: Install and build Angular frontend
+        run: |
+          cd FINAL_GATEWAY_Janasi_Rajput/src/main/webapp
+          npm install
+          npm start
+
+      # -------------------------
+      # Dependency Graph (optional but useful)
+      # -------------------------
+      - name: Update dependency graph
+        uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
