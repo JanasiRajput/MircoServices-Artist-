@@ -1,0 +1,12 @@
+<header>
+  <nav>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a routerLink="/employees" routerLinkActive="active">Employees</a>
+    <a routerLink="/add-employee" routerLinkActive="active">Add Employee</a>
+    <a routerLink="/items" routerLinkActive="active">Items</a>
+    <a routerLink="/add-item" routerLinkActive="active">Add Item</a>
+  </nav>
+</header>
+<main class="container">
+  <router-outlet></router-outlet>
+</main>

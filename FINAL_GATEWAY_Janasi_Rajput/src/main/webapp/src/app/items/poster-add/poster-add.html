@@ -1,0 +1,25 @@
+<h3>Add Item</h3>
+<form (ngSubmit)="addItem()" #itemForm="ngForm" style="display: flex; flex-direction: column; width: 300px; gap: 1rem;">
+  <div>
+    <label for="name">Item Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="item.name" required style="width: 100%; padding: 0.5rem;" />
+  </div>
+  <div>
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" [(ngModel)]="item.price" required style="width: 100%; padding: 0.5rem;" />
+  </div>
+  <div>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" [(ngModel)]="item.quantity" required style="width: 100%; padding: 0.5rem;" />
+  </div>
+  <div>
+    <label for="employeeName">Employee Name:</label>
+    <select id="employeeName" name="employeeName" [(ngModel)]="item.employeeName" required style="width: 100%; padding: 0.5rem;">
+      <option value="" disabled selected>Select an Employee</option>
+      @for (artist of artists; track artist.id) {
+        <option [value]="artist.name">{{ artist.name }}</option>
+      }
+    </select>
+  </div>
+  <button type="submit" [disabled]="!itemForm.form.valid" style="padding: 0.5rem; background-color: #333; color: white; border: none; cursor: pointer;">Add Item</button>
+</form>
